@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		991A71ED18B8E43000B2F46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71EC18B8E43000B2F46B /* Foundation.framework */; };
-		991A71F218B8E43000B2F46B /* NXCoreDataController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991A71F118B8E43000B2F46B /* NXCoreDataController.h */; };
-		991A71F418B8E43000B2F46B /* NXCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A71F318B8E43000B2F46B /* NXCoreDataController.m */; };
+		991A71F218B8E43000B2F46B /* TKCoreDataController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991A71F118B8E43000B2F46B /* TKCoreDataController.h */; };
+		991A71F418B8E43000B2F46B /* TKCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A71F318B8E43000B2F46B /* TKCoreDataController.m */; };
 		991A71FB18B8E43100B2F46B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71FA18B8E43100B2F46B /* XCTest.framework */; };
 		991A71FC18B8E43100B2F46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71EC18B8E43000B2F46B /* Foundation.framework */; };
 		991A71FE18B8E43100B2F46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71FD18B8E43100B2F46B /* UIKit.framework */; };
-		991A720118B8E43100B2F46B /* libCoreDataController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71E918B8E43000B2F46B /* libCoreDataController.a */; };
+		991A720118B8E43100B2F46B /* libTKCoreDataController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71E918B8E43000B2F46B /* libTKCoreDataController.a */; };
 		991A720718B8E43100B2F46B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991A720518B8E43100B2F46B /* InfoPlist.strings */; };
 		991A720918B8E43100B2F46B /* NXCoreDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */; };
 		991A721318B8E48300B2F46B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A721218B8E48300B2F46B /* CoreData.framework */; };
@@ -36,22 +36,22 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				991A71F218B8E43000B2F46B /* NXCoreDataController.h in CopyFiles */,
+				991A71F218B8E43000B2F46B /* TKCoreDataController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		991A71E918B8E43000B2F46B /* libCoreDataController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreDataController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		991A71E918B8E43000B2F46B /* libTKCoreDataController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTKCoreDataController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		991A71EC18B8E43000B2F46B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		991A71F018B8E43000B2F46B /* CoreDataController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataController-Prefix.pch"; sourceTree = "<group>"; };
-		991A71F118B8E43000B2F46B /* NXCoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXCoreDataController.h; sourceTree = "<group>"; };
-		991A71F318B8E43000B2F46B /* NXCoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCoreDataController.m; sourceTree = "<group>"; };
-		991A71F918B8E43100B2F46B /* CoreDataControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		991A71F018B8E43000B2F46B /* TKCoreDataController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKCoreDataController-Prefix.pch"; sourceTree = "<group>"; };
+		991A71F118B8E43000B2F46B /* TKCoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCoreDataController.h; sourceTree = "<group>"; };
+		991A71F318B8E43000B2F46B /* TKCoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCoreDataController.m; sourceTree = "<group>"; };
+		991A71F918B8E43100B2F46B /* TKCoreDataControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKCoreDataControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		991A71FA18B8E43100B2F46B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		991A71FD18B8E43100B2F46B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		991A720418B8E43100B2F46B /* CoreDataControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataControllerTests-Info.plist"; sourceTree = "<group>"; };
+		991A720418B8E43100B2F46B /* TKCoreDataControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKCoreDataControllerTests-Info.plist"; sourceTree = "<group>"; };
 		991A720618B8E43100B2F46B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCoreDataControllerTests.m; sourceTree = "<group>"; };
 		991A721218B8E48300B2F46B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991A720118B8E43100B2F46B /* libCoreDataController.a in Frameworks */,
+				991A720118B8E43100B2F46B /* libTKCoreDataController.a in Frameworks */,
 				991A71FB18B8E43100B2F46B /* XCTest.framework in Frameworks */,
 				991A71FE18B8E43100B2F46B /* UIKit.framework in Frameworks */,
 				991A71FC18B8E43100B2F46B /* Foundation.framework in Frameworks */,
@@ -94,8 +94,8 @@
 		991A71EA18B8E43000B2F46B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				991A71E918B8E43000B2F46B /* libCoreDataController.a */,
-				991A71F918B8E43100B2F46B /* CoreDataControllerTests.xctest */,
+				991A71E918B8E43000B2F46B /* libTKCoreDataController.a */,
+				991A71F918B8E43100B2F46B /* TKCoreDataControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,8 +114,8 @@
 		991A71EE18B8E43000B2F46B /* CoreDataController */ = {
 			isa = PBXGroup;
 			children = (
-				991A71F118B8E43000B2F46B /* NXCoreDataController.h */,
-				991A71F318B8E43000B2F46B /* NXCoreDataController.m */,
+				991A71F118B8E43000B2F46B /* TKCoreDataController.h */,
+				991A71F318B8E43000B2F46B /* TKCoreDataController.m */,
 				991A71EF18B8E43000B2F46B /* Supporting Files */,
 			);
 			path = CoreDataController;
@@ -124,7 +124,7 @@
 		991A71EF18B8E43000B2F46B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				991A71F018B8E43000B2F46B /* CoreDataController-Prefix.pch */,
+				991A71F018B8E43000B2F46B /* TKCoreDataController-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 		991A720318B8E43100B2F46B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				991A720418B8E43100B2F46B /* CoreDataControllerTests-Info.plist */,
+				991A720418B8E43100B2F46B /* TKCoreDataControllerTests-Info.plist */,
 				991A720518B8E43100B2F46B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		991A71E818B8E43000B2F46B /* CoreDataController */ = {
+		991A71E818B8E43000B2F46B /* TKCoreDataController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 991A720C18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "CoreDataController" */;
+			buildConfigurationList = 991A720C18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "TKCoreDataController" */;
 			buildPhases = (
 				991A71E518B8E43000B2F46B /* Sources */,
 				991A71E618B8E43000B2F46B /* Frameworks */,
@@ -162,14 +162,14 @@
 			);
 			dependencies = (
 			);
-			name = CoreDataController;
+			name = TKCoreDataController;
 			productName = CoreDataController;
-			productReference = 991A71E918B8E43000B2F46B /* libCoreDataController.a */;
+			productReference = 991A71E918B8E43000B2F46B /* libTKCoreDataController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		991A71F818B8E43100B2F46B /* CoreDataControllerTests */ = {
+		991A71F818B8E43100B2F46B /* TKCoreDataControllerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 991A720F18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "CoreDataControllerTests" */;
+			buildConfigurationList = 991A720F18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "TKCoreDataControllerTests" */;
 			buildPhases = (
 				991A71F518B8E43100B2F46B /* Sources */,
 				991A71F618B8E43100B2F46B /* Frameworks */,
@@ -180,9 +180,9 @@
 			dependencies = (
 				991A720018B8E43100B2F46B /* PBXTargetDependency */,
 			);
-			name = CoreDataControllerTests;
+			name = TKCoreDataControllerTests;
 			productName = CoreDataControllerTests;
-			productReference = 991A71F918B8E43100B2F46B /* CoreDataControllerTests.xctest */;
+			productReference = 991A71F918B8E43100B2F46B /* TKCoreDataControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "nxtbgthng GmbH";
 			};
-			buildConfigurationList = 991A71E418B8E43000B2F46B /* Build configuration list for PBXProject "CoreDataController" */;
+			buildConfigurationList = 991A71E418B8E43000B2F46B /* Build configuration list for PBXProject "TKCoreDataController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				991A71E818B8E43000B2F46B /* CoreDataController */,
-				991A71F818B8E43100B2F46B /* CoreDataControllerTests */,
+				991A71E818B8E43000B2F46B /* TKCoreDataController */,
+				991A71F818B8E43100B2F46B /* TKCoreDataControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991A71F418B8E43000B2F46B /* NXCoreDataController.m in Sources */,
+				991A71F418B8E43000B2F46B /* TKCoreDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 /* Begin PBXTargetDependency section */
 		991A720018B8E43100B2F46B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 991A71E818B8E43000B2F46B /* CoreDataController */;
+			target = 991A71E818B8E43000B2F46B /* TKCoreDataController */;
 			targetProxy = 991A71FF18B8E43100B2F46B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -338,9 +338,9 @@
 			buildSettings = {
 				DSTROOT = /tmp/CoreDataController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/CoreDataController-Prefix.pch";
+				GCC_PREFIX_HEADER = "CoreDataController/TKCoreDataController-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TKCoreDataController;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -350,9 +350,9 @@
 			buildSettings = {
 				DSTROOT = /tmp/CoreDataController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/CoreDataController-Prefix.pch";
+				GCC_PREFIX_HEADER = "CoreDataController/TKCoreDataController-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TKCoreDataController;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -372,8 +372,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CoreDataControllerTests/CoreDataControllerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
+				PRODUCT_NAME = TKCoreDataControllerTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -389,8 +389,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreDataController/CoreDataController-Prefix.pch";
-				INFOPLIST_FILE = "CoreDataControllerTests/CoreDataControllerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
+				PRODUCT_NAME = TKCoreDataControllerTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -398,7 +398,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		991A71E418B8E43000B2F46B /* Build configuration list for PBXProject "CoreDataController" */ = {
+		991A71E418B8E43000B2F46B /* Build configuration list for PBXProject "TKCoreDataController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				991A720A18B8E43100B2F46B /* Debug */,
@@ -407,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		991A720C18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "CoreDataController" */ = {
+		991A720C18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "TKCoreDataController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				991A720D18B8E43100B2F46B /* Debug */,
@@ -415,7 +415,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		991A720F18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "CoreDataControllerTests" */ = {
+		991A720F18B8E43100B2F46B /* Build configuration list for PBXNativeTarget "TKCoreDataControllerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				991A721018B8E43100B2F46B /* Debug */,

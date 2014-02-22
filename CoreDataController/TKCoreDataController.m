@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 nxtbgthng GmbH. All rights reserved.
 //
 
-#import "NXCoreDataController.h"
+#import "TKCoreDataController.h"
 
-@interface NXCoreDataController ()
+@interface TKCoreDataController ()
 
 @property (nonatomic, readwrite) NSManagedObjectContext *mainObjectContext;
 @property (nonatomic, readwrite) NSManagedObjectModel *managedObjectModel;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation NXCoreDataController
+@implementation TKCoreDataController
 
 - (id)init;
 {

@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface NXCoreDataController : NSObject
+@interface TKCoreDataController : NSObject
 
 @property (nonatomic, readonly) NSManagedObjectContext *mainObjectContext;
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
@@ -32,7 +32,8 @@
                                        options:(NSDictionary *)optionsOrNil
                                          error:(NSError **)error;
 
-- (NSPersistentStore *)removePersistentStoreAtURL:(NSURL *)persistentStoreURL error:(NSError **)error;
+- (NSPersistentStore *)removePersistentStoreAtURL:(NSURL *)persistentStoreURL
+                                            error:(NSError **)error;
 
 
 #pragma mark Core Data Persistent Store Managment - Async
