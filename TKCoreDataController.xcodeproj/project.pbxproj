@@ -15,7 +15,7 @@
 		991A71FE18B8E43100B2F46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71FD18B8E43100B2F46B /* UIKit.framework */; };
 		991A720118B8E43100B2F46B /* libTKCoreDataController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71E918B8E43000B2F46B /* libTKCoreDataController.a */; };
 		991A720718B8E43100B2F46B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991A720518B8E43100B2F46B /* InfoPlist.strings */; };
-		991A720918B8E43100B2F46B /* NXCoreDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */; };
+		991A720918B8E43100B2F46B /* TKCoreDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A720818B8E43100B2F46B /* TKCoreDataControllerTests.m */; };
 		991A721318B8E48300B2F46B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A721218B8E48300B2F46B /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		991A71FD18B8E43100B2F46B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		991A720418B8E43100B2F46B /* TKCoreDataControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKCoreDataControllerTests-Info.plist"; sourceTree = "<group>"; };
 		991A720618B8E43100B2F46B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCoreDataControllerTests.m; sourceTree = "<group>"; };
+		991A720818B8E43100B2F46B /* TKCoreDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCoreDataControllerTests.m; sourceTree = "<group>"; };
 		991A721218B8E48300B2F46B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -84,8 +84,8 @@
 		991A71E018B8E43000B2F46B = {
 			isa = PBXGroup;
 			children = (
-				991A71EE18B8E43000B2F46B /* CoreDataController */,
-				991A720218B8E43100B2F46B /* CoreDataControllerTests */,
+				991A71EE18B8E43000B2F46B /* TKCoreDataController */,
+				991A720218B8E43100B2F46B /* TKCoreDataControllerTests */,
 				991A71EB18B8E43000B2F46B /* Frameworks */,
 				991A71EA18B8E43000B2F46B /* Products */,
 			);
@@ -111,14 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		991A71EE18B8E43000B2F46B /* CoreDataController */ = {
+		991A71EE18B8E43000B2F46B /* TKCoreDataController */ = {
 			isa = PBXGroup;
 			children = (
 				991A71F118B8E43000B2F46B /* TKCoreDataController.h */,
 				991A71F318B8E43000B2F46B /* TKCoreDataController.m */,
 				991A71EF18B8E43000B2F46B /* Supporting Files */,
 			);
-			path = CoreDataController;
+			path = TKCoreDataController;
 			sourceTree = "<group>";
 		};
 		991A71EF18B8E43000B2F46B /* Supporting Files */ = {
@@ -129,13 +129,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		991A720218B8E43100B2F46B /* CoreDataControllerTests */ = {
+		991A720218B8E43100B2F46B /* TKCoreDataControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */,
+				991A720818B8E43100B2F46B /* TKCoreDataControllerTests.m */,
 				991A720318B8E43100B2F46B /* Supporting Files */,
 			);
-			path = CoreDataControllerTests;
+			path = TKCoreDataControllerTests;
 			sourceTree = "<group>";
 		};
 		991A720318B8E43100B2F46B /* Supporting Files */ = {
@@ -237,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991A720918B8E43100B2F46B /* NXCoreDataControllerTests.m in Sources */,
+				991A720918B8E43100B2F46B /* TKCoreDataControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
