@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface CoreDataControllerTests : XCTestCase
+@interface NXCoreDataControllerTests : XCTestCase
 
 @end
 
-@implementation CoreDataControllerTests
+@implementation NXCoreDataControllerTests
 
 - (void)setUp
 {

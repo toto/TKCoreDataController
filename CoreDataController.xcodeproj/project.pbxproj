@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		991A71ED18B8E43000B2F46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71EC18B8E43000B2F46B /* Foundation.framework */; };
-		991A71F218B8E43000B2F46B /* CoreDataController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991A71F118B8E43000B2F46B /* CoreDataController.h */; };
-		991A71F418B8E43000B2F46B /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A71F318B8E43000B2F46B /* CoreDataController.m */; };
+		991A71F218B8E43000B2F46B /* NXCoreDataController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991A71F118B8E43000B2F46B /* NXCoreDataController.h */; };
+		991A71F418B8E43000B2F46B /* NXCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A71F318B8E43000B2F46B /* NXCoreDataController.m */; };
 		991A71FB18B8E43100B2F46B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71FA18B8E43100B2F46B /* XCTest.framework */; };
 		991A71FC18B8E43100B2F46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71EC18B8E43000B2F46B /* Foundation.framework */; };
 		991A71FE18B8E43100B2F46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71FD18B8E43100B2F46B /* UIKit.framework */; };
 		991A720118B8E43100B2F46B /* libCoreDataController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A71E918B8E43000B2F46B /* libCoreDataController.a */; };
 		991A720718B8E43100B2F46B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991A720518B8E43100B2F46B /* InfoPlist.strings */; };
-		991A720918B8E43100B2F46B /* CoreDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A720818B8E43100B2F46B /* CoreDataControllerTests.m */; };
+		991A720918B8E43100B2F46B /* NXCoreDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */; };
+		991A721318B8E48300B2F46B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991A721218B8E48300B2F46B /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				991A71F218B8E43000B2F46B /* CoreDataController.h in CopyFiles */,
+				991A71F218B8E43000B2F46B /* NXCoreDataController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,14 +46,15 @@
 		991A71E918B8E43000B2F46B /* libCoreDataController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreDataController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		991A71EC18B8E43000B2F46B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		991A71F018B8E43000B2F46B /* CoreDataController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataController-Prefix.pch"; sourceTree = "<group>"; };
-		991A71F118B8E43000B2F46B /* CoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
-		991A71F318B8E43000B2F46B /* CoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
+		991A71F118B8E43000B2F46B /* NXCoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXCoreDataController.h; sourceTree = "<group>"; };
+		991A71F318B8E43000B2F46B /* NXCoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCoreDataController.m; sourceTree = "<group>"; };
 		991A71F918B8E43100B2F46B /* CoreDataControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		991A71FA18B8E43100B2F46B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		991A71FD18B8E43100B2F46B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		991A720418B8E43100B2F46B /* CoreDataControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataControllerTests-Info.plist"; sourceTree = "<group>"; };
 		991A720618B8E43100B2F46B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		991A720818B8E43100B2F46B /* CoreDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataControllerTests.m; sourceTree = "<group>"; };
+		991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCoreDataControllerTests.m; sourceTree = "<group>"; };
+		991A721218B8E48300B2F46B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991A721318B8E48300B2F46B /* CoreData.framework in Frameworks */,
 				991A71ED18B8E43000B2F46B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +103,7 @@
 		991A71EB18B8E43000B2F46B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				991A721218B8E48300B2F46B /* CoreData.framework */,
 				991A71EC18B8E43000B2F46B /* Foundation.framework */,
 				991A71FA18B8E43100B2F46B /* XCTest.framework */,
 				991A71FD18B8E43100B2F46B /* UIKit.framework */,
@@ -110,8 +114,8 @@
 		991A71EE18B8E43000B2F46B /* CoreDataController */ = {
 			isa = PBXGroup;
 			children = (
-				991A71F118B8E43000B2F46B /* CoreDataController.h */,
-				991A71F318B8E43000B2F46B /* CoreDataController.m */,
+				991A71F118B8E43000B2F46B /* NXCoreDataController.h */,
+				991A71F318B8E43000B2F46B /* NXCoreDataController.m */,
 				991A71EF18B8E43000B2F46B /* Supporting Files */,
 			);
 			path = CoreDataController;
@@ -128,7 +132,7 @@
 		991A720218B8E43100B2F46B /* CoreDataControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				991A720818B8E43100B2F46B /* CoreDataControllerTests.m */,
+				991A720818B8E43100B2F46B /* NXCoreDataControllerTests.m */,
 				991A720318B8E43100B2F46B /* Supporting Files */,
 			);
 			path = CoreDataControllerTests;
@@ -187,6 +191,7 @@
 		991A71E118B8E43000B2F46B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NX;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "nxtbgthng GmbH";
 			};
@@ -224,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991A71F418B8E43000B2F46B /* CoreDataController.m in Sources */,
+				991A71F418B8E43000B2F46B /* NXCoreDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991A720918B8E43100B2F46B /* CoreDataControllerTests.m in Sources */,
+				991A720918B8E43100B2F46B /* NXCoreDataControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
