@@ -338,7 +338,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CoreDataController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/TKCoreDataController-Prefix.pch";
+				GCC_PREFIX_HEADER = "TKCoreDataController/TKCoreDataController-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TKCoreDataController;
 				SKIP_INSTALL = YES;
@@ -350,7 +350,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CoreDataController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/TKCoreDataController-Prefix.pch";
+				GCC_PREFIX_HEADER = "TKCoreDataController/TKCoreDataController-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TKCoreDataController;
 				SKIP_INSTALL = YES;
@@ -367,12 +367,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/CoreDataController-Prefix.pch";
+				GCC_PREFIX_HEADER = "TKCoreDataController/TKCoreDataController-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
+				INFOPLIST_FILE = "TKCoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
 				PRODUCT_NAME = TKCoreDataControllerTests;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -388,8 +388,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CoreDataController/CoreDataController-Prefix.pch";
-				INFOPLIST_FILE = "CoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
+				GCC_PREFIX_HEADER = "TKCoreDataController/TKCoreDataController-Prefix.pch";
+				INFOPLIST_FILE = "TKCoreDataControllerTests/TKCoreDataControllerTests-Info.plist";
 				PRODUCT_NAME = TKCoreDataControllerTests;
 				WRAPPER_EXTENSION = xctest;
 			};
