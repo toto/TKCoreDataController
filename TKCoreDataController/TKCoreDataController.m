@@ -22,7 +22,7 @@
 {
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[ [NSBundle mainBundle] ]];
     NSAssert(model != nil, @"No managed object model could be found in main bundle. Use -initWithModel: to specify one or check your target configuration.");
-    
+
     return [self initWithModel:model];
 }
 
@@ -30,16 +30,16 @@
 {
     NSParameterAssert(model);
     self = [super init];
-    
+
     if (self) {
         _managedObjectModel = model;
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
         _mainObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_mainObjectContext performBlock:^{
+        [_mainObjectContext performBlockAndWait:^{
             _mainObjectContext.persistentStoreCoordinator = _persistentStoreCoordinator;
         }];
     }
-    
+
     return self;
 }
 
@@ -55,7 +55,7 @@
 {
     // first check if a migration is required
     BOOL migrationNeeded = NO;
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:persistentStoreURL.path]) {
         NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
                                                                                                   URL:persistentStoreURL
@@ -63,7 +63,7 @@
         NSManagedObjectModel *destinationModel = [self.persistentStoreCoordinator managedObjectModel];
         migrationNeeded = ![destinationModel isConfiguration:nil compatibleWithStoreMetadata:sourceMetadata];
     }
-    
+
     return migrationNeeded;
 }
 
@@ -76,17 +76,17 @@
                                                         NSPersistentStoreTimeoutOption: @(5.0),
                                                         NSMigratePersistentStoresAutomaticallyOption: @YES,
                                                         NSInferMappingModelAutomaticallyOption: @YES }];
-    
+
     if (options) {
         [finalOptions addEntriesFromDictionary:options];
     }
-    
+
     NSPersistentStore *store = [self.persistentStoreCoordinator addPersistentStoreWithType:persistentStoreURL ? NSSQLiteStoreType : NSInMemoryStoreType
                                                                              configuration:configurationNameOrNil
                                                                                        URL:persistentStoreURL
                                                                                    options:[finalOptions copy]
                                                                                      error:error];
-    
+
     return store;
 }
 
@@ -103,7 +103,7 @@
             }
         }
     }
-    
+
     if ([self.persistentStoreCoordinator removePersistentStore:store error:error]) {
         return store;
     } else {
@@ -117,26 +117,26 @@
                migrationHandler:(void(^)(BOOL migrationRequired, NSError *error))migrationHandler
                   resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
 {
-    
+
     if (persistentStoreURL) {
         NSError *migrationCheckError = nil;
         BOOL migrationNeeded = [self isMigrationRequiredForAddingStoreAtURL:persistentStoreURL
                                                                       error:&migrationCheckError];
-        
+
         dispatch_async(queue ?: dispatch_get_main_queue(), ^{
             if (migrationHandler != NULL) {
                 migrationHandler(migrationNeeded, migrationCheckError);
             }
         });
     }
-    
+
     NSError *error = nil;
-    
+
     NSPersistentStore *store = [self addPersistentStoreAtURL:persistentStoreURL
                                            configurationName:configurationNameOrNil
                                                      options:nil
                                                        error:&error];
-    
+
     if (resultHandler) {
         dispatch_async(queue ?: dispatch_get_main_queue(), ^{
             resultHandler(store, error);
