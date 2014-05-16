@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TKCoreDataController"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Controller to manage CoreData."
   s.homepage     = "https://github.com/toto/TKCoreDataController"
   s.license      = "MIT"
