@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "TKCoreDataController"
   s.version      = "0.0.2"
   s.summary      = "Controller to manage CoreData."
-  s.homepage     = "https://github.com/toto/TKCoreDataController"
+  s.homepage     = "https://thomas.kollba.ch"
   s.license      = "MIT"
   s.author       = { "Thomas Kollbach" => "toto@nxtbgthng.com" }
   s.source       = { :git => "git@github.com:toto/TKCoreDataController.git", :tag => "#{s.version}" }
