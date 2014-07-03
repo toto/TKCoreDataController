@@ -3,7 +3,7 @@
 //  CoreDataController
 //
 //  Created by Thomas Kollbach on 22.02.14.
-//  Copyright (c) 2014 nxtbgthng GmbH. All rights reserved.
+//  Copyright (c) 2014 Thomas Kollbach. All rights reserved.
 //
 
 #import "TKCoreDataController.h"
@@ -123,6 +123,7 @@
 
 - (void)addPersistentStoreAtURL:(NSURL *)persistentStoreURL
               withConfiguration:(NSString *)configurationNameOrNil
+                        options:(NSDictionary *)options
                           queue:(dispatch_queue_t)queue
                migrationHandler:(void(^)(BOOL migrationRequired, NSError *error))migrationHandler
                   resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
@@ -145,7 +146,7 @@
         
         NSPersistentStore *store = [self addPersistentStoreAtURL:persistentStoreURL
                                                configurationName:configurationNameOrNil
-                                                         options:nil
+                                                         options:options
                                                            error:&error];
         
         if (resultHandler) {

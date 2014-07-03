@@ -3,7 +3,7 @@
 //  CoreDataController
 //
 //  Created by Thomas Kollbach on 22.02.14.
-//  Copyright (c) 2014 nxtbgthng GmbH. All rights reserved.
+//  Copyright (c) 2014 Thomas Kollbach. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -88,12 +88,40 @@
 
 #pragma mark Core Data Persistent Store Managment - Async
 
+/*!
+ @abstract Asyncronously adds a persistent store
+ @discussion Adding (and a possible migration) is performed on a private queue of the TKCoreDataController.
+ If migration handler is given it is called on the queue passed (or the main queue if queue is nil). 
+ It is alwyas called, even if no migration is required.
+ The result handler is also called on the passed queue (or the main queue if queue is nil) and passed a 
+ reference to the added store or an error.
+ @param persistentStoreURL persistentStoreURLOrNil If a SQLite file should be added an URL to the file. Nil if an
+ in-memory store should be added.
+ @param configurationNameOrNil An optional name of a configuration name.
+ @param options Options that will be used when adding the persistent store. 
+ @param queue The queue the passed handlers should be called on. If nil is passed handers will be called on the main queue.
+ @param migrationHandler Block to be called before the store is added. The block is passed a bool that indicates if a migration is required or not.
+ @param resultHandler Block to be called after the store has been added (or adding has failed)
+ 
+ */
 - (void)addPersistentStoreAtURL:(NSURL *)persistentStoreURL
               withConfiguration:(NSString *)configurationNameOrNil
+                        options:(NSDictionary *)options
                           queue:(dispatch_queue_t)queue
                migrationHandler:(void(^)(BOOL migrationRequired, NSError *error))migrationHandler
                   resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
 
+/*!
+ @abstract Asyncronously removes a persistent store
+ @discussion Removing is performed on a private queue of the TKCoreDataController.
+ The result handler is also called on the passed queue (or the main queue if queue is nil) and passed a
+ reference to the added store or an error.
+ @param persistentStoreURL persistentStoreURLOrNil If a file store should be removed. Nil if an
+ in-memory store should be removed.
+ @param queue The queue the passed handlers should be called on. If nil is passed handers will be called on the main queue.
+ @param resultHandler Block to be called after the store has been removed (or adding has failed)
+ 
+ */
 - (void)removePersistentStoreAtURL:(NSURL *)persistentStoreURL
                              queue:(dispatch_queue_t)queue
                      resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
