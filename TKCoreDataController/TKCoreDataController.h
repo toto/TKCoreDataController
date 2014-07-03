@@ -39,7 +39,7 @@
  @abstract Checks if a migration is required for a persistent store file.
  @discussion An error can ocurr, e.g. if the file cannot be opened, is corrupted or is no
              Core Data compatible persistent store, etc.
- @return YES if a migration is required, otherwise NO.
+ @return YES if a migration is required, otherwise NO. If an error occurs NO is returned as well.
  @param persistentStoreURL The URL of the persistent store file that should be checked.
  @param migrationCheckError Error parameter
  */
