@@ -18,6 +18,8 @@
 @property (nonatomic, readwrite) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readwrite) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (nonatomic, readwrite) BOOL hasPersistentStore;
+
 @end
 
 @implementation TKCoreDataController
@@ -43,18 +45,22 @@
         [_mainObjectContext performBlockAndWait:^{
             _mainObjectContext.persistentStoreCoordinator = _persistentStoreCoordinator;
         }];
+        [_persistentStoreCoordinator addObserver:self
+                                      forKeyPath:@"persistentStores"
+                                         options:NSKeyValueObservingOptionNew
+                                         context:NULL];
     }
 
     return self;
 }
 
+- (void)dealloc
+{
+    [_persistentStoreCoordinator removeObserver:self
+                                     forKeyPath:@"persistentStores"];
+}
 
 #pragma mark Peristent Store
-
-- (BOOL)hasPersistentStore
-{
-    return self.persistentStoreCoordinator.persistentStores.count > 0;
-}
 
 - (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL error:(NSError **)migrationCheckError;
 {
@@ -85,13 +91,12 @@
     if (options) {
         [finalOptions addEntriesFromDictionary:options];
     }
-
     NSPersistentStore *store = [self.persistentStoreCoordinator addPersistentStoreWithType:persistentStoreURL ? NSSQLiteStoreType : NSInMemoryStoreType
                                                                              configuration:configurationNameOrNil
                                                                                        URL:persistentStoreURL
                                                                                    options:[finalOptions copy]
                                                                                      error:error];
-
+    
     return store;
 }
 
@@ -168,6 +173,15 @@
             });
         }
     });
+}
+
+#pragma mark KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (object == self.persistentStoreCoordinator && [keyPath isEqualToString:@"persistentStores"]) {
+        self.hasPersistentStore = self.persistentStoreCoordinator.persistentStores.count > 0;
+    }
 }
 
 @end
