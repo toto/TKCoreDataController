@@ -2,6 +2,16 @@
 
 Core Data Controller to simplify setting up a Core Data stack. 
 
+## Installation with CocoaPods
+
+Add 
+
+```
+pod 'TKCoreDataController'
+```
+
+to your Podfile.
+
 ## Managed object contexts
 
 For convinience `TKCoreDataController` has `mainObjectContext` set up in `NSMainQueueConcurrencyType` on it's persistent store coordinator.
