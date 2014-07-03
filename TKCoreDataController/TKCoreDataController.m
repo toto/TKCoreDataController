@@ -10,6 +10,10 @@
 
 @interface TKCoreDataController ()
 
+@property (nonatomic, readwrite) dispatch_queue_t peristentStoreAddRemoveQueue;
+
+#pragma mark Core Data Stack
+
 @property (nonatomic, readwrite) NSManagedObjectContext *mainObjectContext;
 @property (nonatomic, readwrite) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readwrite) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -32,6 +36,7 @@
     self = [super init];
 
     if (self) {
+        _peristentStoreAddRemoveQueue = dispatch_queue_create("ch.kollba.TKCoreDataController.persistentStore", DISPATCH_QUEUE_SERIAL);
         _managedObjectModel = model;
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
         _mainObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
@@ -130,34 +135,39 @@
         });
     }
 
-    NSError *error = nil;
-
-    NSPersistentStore *store = [self addPersistentStoreAtURL:persistentStoreURL
-                                           configurationName:configurationNameOrNil
-                                                     options:nil
-                                                       error:&error];
-
-    if (resultHandler) {
-        dispatch_async(queue ?: dispatch_get_main_queue(), ^{
-            resultHandler(store, error);
-        });
-    }
+    dispatch_async(self.peristentStoreAddRemoveQueue, ^{
+        NSError *error = nil;
+        
+        NSPersistentStore *store = [self addPersistentStoreAtURL:persistentStoreURL
+                                               configurationName:configurationNameOrNil
+                                                         options:nil
+                                                           error:&error];
+        
+        if (resultHandler) {
+            dispatch_async(queue ?: dispatch_get_main_queue(), ^{
+                resultHandler(store, error);
+            });
+        }
+    });
+    
 }
 
 - (void)removePersistentStoreAtURL:(NSURL *)persistentStoreURL
                              queue:(dispatch_queue_t)queue
                      resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
 {
-    NSPersistentStore *store = nil;
-
-    NSError *error = nil;
-    store = [self removePersistentStoreAtURL:persistentStoreURL error:&error];
-
-    if (resultHandler) {
-        dispatch_async(queue ?: dispatch_get_main_queue(), ^{
-            resultHandler(store, error);
-        });
-    }
+    dispatch_async(self.peristentStoreAddRemoveQueue, ^{
+        NSPersistentStore *store = nil;
+        
+        NSError *error = nil;
+        store = [self removePersistentStoreAtURL:persistentStoreURL error:&error];
+        
+        if (resultHandler) {
+            dispatch_async(queue ?: dispatch_get_main_queue(), ^{
+                resultHandler(store, error);
+            });
+        }
+    });
 }
 
 @end
