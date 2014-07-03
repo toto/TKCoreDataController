@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "TKCoreDataController"
-  s.version      = "0.0.2"
-  s.summary      = "Controller to manage CoreData."
+  s.version      = "0.0.3"
+  s.summary      = "Controller to simpify settin up a Core Data stack. E.g. asynchronous adding of persistent stores."
   s.homepage     = "https://thomas.kollba.ch"
   s.license      = "MIT"
   s.author       = { "Thomas Kollbach" => "toto@nxtbgthng.com" }
