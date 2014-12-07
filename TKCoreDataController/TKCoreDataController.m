@@ -71,7 +71,7 @@
         NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
                                                                                                   URL:persistentStoreURL
                                                                                                 error:migrationCheckError];
-        if (migrationCheckError) {
+        if (*migrationCheckError) {
             return NO;
         }
         NSManagedObjectModel *destinationModel = [self.persistentStoreCoordinator managedObjectModel];
