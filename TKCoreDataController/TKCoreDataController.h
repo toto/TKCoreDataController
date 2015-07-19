@@ -12,6 +12,8 @@
 
 @interface TKCoreDataController : NSObject
 
+NS_ASSUME_NONNULL_BEGIN
+
 @property (nonatomic, readonly) NSManagedObjectContext *mainObjectContext;
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -44,7 +46,7 @@
  @param migrationCheckError Error parameter
  */
 - (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL
-                                         error:(NSError **)migrationCheckError;
+                                         error:(NSError ** __nullable)migrationCheckError;
 
 /*!
  @abstract Syncronously adds a persistent store on the current thread.
@@ -67,10 +69,10 @@
  @param options Options that will be used when adding the persistent store.
  @param error An optional error parameter.
  */
-- (NSPersistentStore *)addPersistentStoreAtURL:(NSURL *)persistentStoreURLOrNil
-                             configurationName:(NSString *)configurationNameOrNil
-                                       options:(NSDictionary *)optionsOrNil
-                                         error:(NSError **)error;
+- (NSPersistentStore * __nullable)addPersistentStoreAtURL:(NSURL * __nullable)persistentStoreURLOrNil
+                                        configurationName:(NSString * __nullable)configurationNameOrNil
+                                                  options:(NSDictionary * __nullable)optionsOrNil
+                                                    error:(NSError ** __nullable)error;
 
 /*!
  @abstract Removes a store from the persistent store coordinator
@@ -82,8 +84,8 @@
  @param migrationCheckError Error parameter
  @see removePersistentStoreAtURL:queue:resultHandler:
  */
-- (NSPersistentStore *)removePersistentStoreAtURL:(NSURL *)persistentStoreURL
-                                            error:(NSError **)error;
+- (NSPersistentStore * __nullable)removePersistentStoreAtURL:(NSURL * __nullable)persistentStoreURL
+                                                       error:(NSError ** __nullable)error;
 
 
 #pragma mark Core Data Persistent Store Managment - Async
@@ -104,12 +106,12 @@
  @param resultHandler Block to be called after the store has been added (or adding has failed)
  
  */
-- (void)addPersistentStoreAtURL:(NSURL *)persistentStoreURL
-              withConfiguration:(NSString *)configurationNameOrNil
-                        options:(NSDictionary *)options
-                          queue:(dispatch_queue_t)queue
-               migrationHandler:(void(^)(BOOL migrationRequired, NSError *error))migrationHandler
-                  resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
+- (void)addPersistentStoreAtURL:(NSURL * __nullable)persistentStoreURL
+              withConfiguration:(NSString * __nullable)configurationNameOrNil
+                        options:(NSDictionary * __nullable)options
+                          queue:(dispatch_queue_t __nullable)queue
+               migrationHandler:(void(^ __nullable)(BOOL, NSError * __nullable))migrationHandler
+                  resultHandler:(void(^ __nullable)(NSPersistentStore * __nullable, NSError * __nullable))resultHandler;
 
 /*!
  @abstract Asyncronously removes a persistent store
@@ -122,9 +124,10 @@
  @param resultHandler Block to be called after the store has been removed (or adding has failed)
  
  */
-- (void)removePersistentStoreAtURL:(NSURL *)persistentStoreURL
+- (void)removePersistentStoreAtURL:(NSURL * __nullable)persistentStoreURL
                              queue:(dispatch_queue_t)queue
-                     resultHandler:(void(^)(NSPersistentStore *store, NSError *error))resultHandler;
+                     resultHandler:(void(^)(NSPersistentStore * __nullable, NSError * __nullable))resultHandler;
 
+NS_ASSUME_NONNULL_END
 
 @end

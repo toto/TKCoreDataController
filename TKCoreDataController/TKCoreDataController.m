@@ -64,6 +64,7 @@
 
 - (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL error:(NSError **)migrationCheckError;
 {
+    NSParameterAssert(persistentStoreURL);
     // first check if a migration is required
     BOOL migrationNeeded = NO;
 
@@ -71,7 +72,7 @@
         NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
                                                                                                   URL:persistentStoreURL
                                                                                                 error:migrationCheckError];
-        if (*migrationCheckError) {
+        if (migrationCheckError && *migrationCheckError) {
             return NO;
         }
         NSManagedObjectModel *destinationModel = [self.persistentStoreCoordinator managedObjectModel];
