@@ -70,9 +70,8 @@
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:persistentStoreURL.path]) {
 		NSError *migrationCheckError = nil;
-        NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
-                                                                                                  URL:persistentStoreURL
-                                                                                                error:migrationCheckError];
+        NSDictionary *sourceMetadata = [NSPersistentStore metadataForPersistentStoreWithURL:persistentStoreURL
+                                                                                      error:&migrationCheckError];
         if (migrationCheckError) {
             return NO;
         }
