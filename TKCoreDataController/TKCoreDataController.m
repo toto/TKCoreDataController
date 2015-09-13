@@ -135,13 +135,11 @@
 {
 
     if (persistentStoreURL) {
-        NSError *migrationCheckError = nil;
-        BOOL migrationNeeded = [self isMigrationRequiredForAddingStoreAtURL:persistentStoreURL
-                                                                      error:&migrationCheckError];
+        BOOL migrationNeeded = [self isMigrationRequiredForAddingStoreAtURL:persistentStoreURL];
 
         dispatch_async(queue ?: dispatch_get_main_queue(), ^{
             if (migrationHandler != NULL) {
-                migrationHandler(migrationNeeded, migrationCheckError);
+                migrationHandler(migrationNeeded, nil);
             }
         });
     }
