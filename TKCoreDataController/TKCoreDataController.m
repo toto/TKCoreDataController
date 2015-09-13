@@ -62,17 +62,18 @@
 
 #pragma mark Peristent Store
 
-- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL error:(NSError **)migrationCheckError;
+- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL
 {
     NSParameterAssert(persistentStoreURL);
     // first check if a migration is required
     BOOL migrationNeeded = NO;
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:persistentStoreURL.path]) {
+		NSError *migrationCheckError = nil;
         NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
                                                                                                   URL:persistentStoreURL
                                                                                                 error:migrationCheckError];
-        if (migrationCheckError && *migrationCheckError) {
+        if (migrationCheckError) {
             return NO;
         }
         NSManagedObjectModel *destinationModel = [self.persistentStoreCoordinator managedObjectModel];
