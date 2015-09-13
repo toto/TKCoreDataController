@@ -62,16 +62,24 @@
 
 #pragma mark Peristent Store
 
-- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL
+- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL options:(NSDictionary *)options
 {
     NSParameterAssert(persistentStoreURL);
     // first check if a migration is required
     BOOL migrationNeeded = NO;
+    
+    NSMutableDictionary *finalOptions = [NSMutableDictionary dictionaryWithDictionary:[self defaultOptions]];
+    
+    if (options) {
+        [finalOptions addEntriesFromDictionary:options];
+    }
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:persistentStoreURL.path]) {
 		NSError *migrationCheckError = nil;
-        NSDictionary *sourceMetadata = [NSPersistentStore metadataForPersistentStoreWithURL:persistentStoreURL
-                                                                                      error:&migrationCheckError];
+        NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType
+                                                                                                  URL:persistentStoreURL
+                                                                                              options:finalOptions
+                                                                                                error:&migrationCheckError];
         if (migrationCheckError) {
             return NO;
         }
@@ -82,15 +90,19 @@
     return migrationNeeded;
 }
 
+- (NSDictionary *)defaultOptions
+{
+    return @{ NSPersistentStoreTimeoutOption: @(5.0),
+              NSMigratePersistentStoresAutomaticallyOption: @YES,
+              NSInferMappingModelAutomaticallyOption: @YES };
+}
+
 - (NSPersistentStore *)addPersistentStoreAtURL:(NSURL *)persistentStoreURL
                              configurationName:(NSString *)configurationNameOrNil
                                        options:(NSDictionary *)options
                                          error:(NSError **)error;
 {
-    NSMutableDictionary *finalOptions = [NSMutableDictionary dictionaryWithDictionary:@{
-                                                        NSPersistentStoreTimeoutOption: @(5.0),
-                                                        NSMigratePersistentStoresAutomaticallyOption: @YES,
-                                                        NSInferMappingModelAutomaticallyOption: @YES }];
+    NSMutableDictionary *finalOptions = [NSMutableDictionary dictionaryWithDictionary:[self defaultOptions]];
 
     if (options) {
         [finalOptions addEntriesFromDictionary:options];
@@ -134,7 +146,7 @@
 {
 
     if (persistentStoreURL) {
-        BOOL migrationNeeded = [self isMigrationRequiredForAddingStoreAtURL:persistentStoreURL];
+        BOOL migrationNeeded = [self isMigrationRequiredForAddingStoreAtURL:persistentStoreURL options:options];
 
         dispatch_async(queue ?: dispatch_get_main_queue(), ^{
             if (migrationHandler != NULL) {

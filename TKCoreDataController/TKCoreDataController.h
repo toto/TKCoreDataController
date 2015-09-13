@@ -42,9 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion An error can ocurr, e.g. if the file cannot be opened, is corrupted or is no
              Core Data compatible persistent store, etc.
  @param persistentStoreURL The URL of the persistent store file that should be checked.
+ @param options The same options passed to -addPersistentStoreAtURL:... style methods
  @return YES if a migration is required, otherwise NO. If an error occurs NO is returned as well.
  */
-- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL;
+- (BOOL)isMigrationRequiredForAddingStoreAtURL:(NSURL *)persistentStoreURL options:(NSDictionary * __nullable)options;
 
 /*!
  @abstract Syncronously adds a persistent store on the current thread.
