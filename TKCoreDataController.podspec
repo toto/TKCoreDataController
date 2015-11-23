@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TKCoreDataController"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "Controller to simpify settin up a Core Data stack. E.g. asynchronous adding of persistent stores."
   s.homepage     = "https://github.com/toto/TKCoreDataController"
   s.license      = "MIT"
